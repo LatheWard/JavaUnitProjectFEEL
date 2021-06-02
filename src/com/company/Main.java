@@ -36,16 +36,12 @@ public class Main {
         System.out.println(" - - F E E L - - ");
         String mainChoice = ""; // use for main functioning later
         while(!mainChoice.equalsIgnoreCase("exit")){
-            System.out.println("[help], Enter my [emotions], Set my [tastes], [add] my Playlists, [exit]");
+            System.out.println("[help], Enter my [emotions], [add] my Playlists, [exit]");
             mainChoice = userInput.nextLine();
             if(mainChoice.equalsIgnoreCase("help")){
                 System.out.println("ENTER MY EMOTIONS:");
                 System.out.print(" This is the main function of the app." +
                         "\n Select this for a recommendation in genre and Spotify playlists" +
-                        "\n- - - -");
-                System.out.println("\nSET MY TASTES:");
-                System.out.print(" This changes what we recommend to you based off of your mood.\n" +
-                        " You select what playlist genre we should recommend to you" +
                         "\n- - - -");
                 System.out.println("\nADD MY PLAYLISTS:");
                 System.out.print(" Along with our own playlists to listen to, you can add in the names and information\n" +
