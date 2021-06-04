@@ -14,27 +14,31 @@ public class Main {
         String[] emotions ={"happy", "sad", "angry", "anxious"};
         ArrayList<String> genresList = new ArrayList<>(Arrays.asList(genres));
         ArrayList<String> emotionsList = new ArrayList<>(Arrays.asList(emotions));
-        ArrayList<ArrayList> allPlaylists = new ArrayList<>();
+        ArrayList<Playlist> allPlaylists = new ArrayList<>();
         ArrayList<Playlist> happyList = new ArrayList<>();
-        allPlaylists.add(happyList);
+
         Playlist happySongs = new Playlist("HappySongs", "pop", 221, 734, false);
         happyList.add(happySongs);
+        allPlaylists.add(happySongs);
 
         ArrayList<Playlist> sadList = new ArrayList<>();
-        allPlaylists.add(sadList);
         Playlist sadSongs = new Playlist("SadSongs", "pop", 207, 720, false);
         sadList.add(sadSongs);
-
+        allPlaylists.add(sadSongs);
         ArrayList<Playlist> angryList = new ArrayList<>();
-        allPlaylists.add(angryList);
+
         Playlist REDRUM = new Playlist("REDRUM", "Metal", 99, 109, true);
+        angryList.add(REDRUM);
+        allPlaylists.add(REDRUM);
+
         Playlist angrySongs = new Playlist("Angry Tunes", "Metal", 36, 139, false);
         angryList.add(angrySongs);
-
+        allPlaylists.add(angrySongs);
         ArrayList<Playlist> anxiousList = new ArrayList<>();
-        allPlaylists.add(anxiousList);
+
         Playlist anxiousSongs = new Playlist("Anxiety Relief", "Alternative", 336, 252, false);
         anxiousList.add(anxiousSongs);
+        allPlaylists.add(anxiousSongs);
 
         System.out.println(" - - F E E L - - ");
         String mainChoice = ""; // use for main functioning later
@@ -178,22 +182,12 @@ public class Main {
                         angryList.add(newPlaylist);
                         sadList.add(newPlaylist);
                     }
-                    System.out.println("Still want to add more playlists? [Y/N] >");
-                    String wantMorePlaylists = userInput.nextLine();
-                    if(wantMorePlaylists.equalsIgnoreCase("y")){
-                        continue;
-                    }
-                    else if(wantMorePlaylists.equalsIgnoreCase("n")){
-                        break;
-                    }
             }
             }
             else if(mainChoice.equalsIgnoreCase("view")){
-                for(ArrayList list: allPlaylists){
-                   for(Object playlist : list){
+                   for(Playlist playlist : allPlaylists){
                        System.out.println(playlist.toString());
                    }
-                }
             }
         }
     }
